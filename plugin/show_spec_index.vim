@@ -8,7 +8,7 @@ function ShowSpecIndex()
   call setloclist(0, [])
 
   for line_number in range(1,line('$'))
-    if getline(line_number) =~ '^[ \t]*\(\<[Ii]ts\?\>\|\<[Dd]escribe\>\|\<[Cc]ontext\>\|\<[Ff]eature\>\|\<[Ss]cenario\>\)'
+    if getline(line_number) =~ '^[ \t]*\(\<[Ii]ts\?\>\|\<[Dd]escribe\>\|\<[Cc]ontext\>\|\<[Ff]eature\>\|\<[Ss]cenario\>|\<[Tt]est\>\)'
       let expr = printf('%s:%s:%s', expand("%"), line_number, substitute(getline(line_number), '[ \t]', nr2char(160), 'g'))
       laddexpr expr
     endif
