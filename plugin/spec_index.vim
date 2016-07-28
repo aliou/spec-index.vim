@@ -4,7 +4,7 @@ endif
 
 let g:spec_index_loaded = 1
 
-function ShowSpecIndex()
+function SpecIndex()
   call setloclist(0, [])
 
   for line_number in range(1,line('$'))
@@ -21,4 +21,4 @@ function ShowSpecIndex()
   syntax match llFileName /^[^|]*|[^|]*| / transparent conceal
 endfunction
 
-command! ShowSpecIndex call ShowSpecIndex()
+command! SpecIndex call SpecIndex()
